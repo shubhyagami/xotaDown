@@ -24,15 +24,30 @@ def handle_message(update, context):
 
         update.message.reply_text(f"⬇️ Downloading with Aria2: {filename} ...")
 
-        # Run aria2c with 16 connections
-        result = subprocess.run(
+        # Run aria2c with progress output
+        process = subprocess.Popen(
             ["aria2c", "-x", "16", "-s", "16", "-d", DOWNLOAD_DIR, "-o", filename, url],
             stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1,
+            universal_newlines=True
         )
 
-        if result.returncode != 0:
-            update.message.reply_text(f"❌ Aria2 failed:\n{result.stderr.decode()}")
+        last_percent = -1
+        for line in process.stdout:
+            if "%" in line:
+                parts = line.split()
+                for part in parts:
+                    if "%" in part and part.strip("%").isdigit():
+                        percent = int(part.strip("%"))
+                        if percent != last_percent and percent % 5 == 0:  # update every 5%
+                            context.bot.send_message(chat_id=update.message.chat_id, text=f"📊 Progress: {percent}%")
+                            last_percent = percent
+
+        process.wait()
+        if process.returncode != 0:
+            update.message.reply_text("❌ Download failed!")
             return
 
         # Send file to Telegram
