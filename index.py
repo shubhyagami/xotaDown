@@ -1,76 +1,39 @@
 import os
-import subprocess
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+import requests
 
-# ====== CONFIG ======
-BOT_TOKEN = "8377097614:AAGt8MOFJfzdYCtpikwNK_noCsenKXVTUY0"   # 🔴 Replace with your token
-DOWNLOAD_DIR = "/tmp"          # Directory for temporary downloads
-CHAT_ID = "5933203565"         # Optional: restrict bot to your chat
-# ====================
+# ==== CONFIG ====
+BOT_TOKEN = "8377097614:AAGt8MOFJfzdYCtpikwNK_noCsenKXVTUY0"   # 🔴 Replace with your bot token
+CHAT_ID = "5933203565"   # 🔴 Replace with your Telegram chat ID
+FILE_PATH = "/home/user/bigfile.zip"   # 🔴 Replace with the file you want to send
+# ================
 
-def start(update, context):
-    update.message.reply_text("👋 Send me a file URL and I'll fetch it using Aria2 🚀")
+def send_file(file_path):
+    url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendDocument"
 
-def handle_message(update, context):
-    url = update.message.text.strip()
+    file_size = os.path.getsize(file_path)
+    uploaded = 0
+    chunk_size = 1024 * 1024  # 1MB chunks
 
-    if not url.startswith("http"):
-        update.message.reply_text("⚠️ Please send a valid URL.")
-        return
+    with open(file_path, "rb") as f:
+        # Stream upload with chunks
+        def file_gen():
+            nonlocal uploaded
+            while True:
+                data = f.read(chunk_size)
+                if not data:
+                    break
+                uploaded += len(data)
+                percent = int((uploaded / file_size) * 100)
+                print(f"\r📤 Uploading: {percent}% ({uploaded // (1024*1024)}MB/{file_size // (1024*1024)}MB)", end="")
+                yield data
 
-    try:
-        filename = url.split("/")[-1].split("?")[0] or "downloaded_file"
-        local_filename = os.path.join(DOWNLOAD_DIR, filename)
-
-        update.message.reply_text(f"⬇️ Downloading with Aria2: {filename} ...")
-
-        # Run aria2c with progress output
-        process = subprocess.Popen(
-            ["aria2c", "-x", "16", "-s", "16", "-d", DOWNLOAD_DIR, "-o", filename, url],
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1,
-            universal_newlines=True
+        response = requests.post(
+            url,
+            data={"chat_id": CHAT_ID},
+            files={"document": (os.path.basename(file_path), file_gen())}
         )
 
-        last_percent = -1
-        for line in process.stdout:
-            if "%" in line:
-                parts = line.split()
-                for part in parts:
-                    if "%" in part and part.strip("%").isdigit():
-                        percent = int(part.strip("%"))
-                        if percent != last_percent and percent % 5 == 0:  # update every 5%
-                            context.bot.send_message(chat_id=update.message.chat_id, text=f"📊 Progress: {percent}%")
-                            last_percent = percent
-
-        process.wait()
-        if process.returncode != 0:
-            update.message.reply_text("❌ Download failed!")
-            return
-
-        # Send file to Telegram
-        with open(local_filename, "rb") as f:
-            context.bot.send_document(chat_id=update.message.chat_id, document=f)
-
-        update.message.reply_text("✅ File sent successfully!")
-
-        # Delete file after sending
-        os.remove(local_filename)
-
-    except Exception as e:
-        update.message.reply_text(f"❌ Error: {str(e)}")
-
-def main():
-    updater = Updater(BOT_TOKEN, use_context=True)
-    dp = updater.dispatcher
-
-    dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(MessageHandler(Filters.text & ~Filters.command, handle_message))
-
-    updater.start_polling()
-    updater.idle()
+    print("\n✅ Upload complete:", response.json())
 
 if __name__ == "__main__":
-    main()
+    send_file(FILE_PATH)
