@@ -56,63 +56,41 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 ### 2026-07-30
 - 🆕 **Smart Resume** – Added `--resume` flag to skip already-downloaded media and avoid re-downloads.
 - 🐛 Fixed crash when tweet contains multi-byte unicode characters in user bio.
-- ⚡ Optimized thread extraction for conversations with >100 replies.
-
-### 2026-07-29
-- 🆕 **Date-range filtering** – Added `--from` and `--to` flags to filter tweets by creation date.
-- 🐛 Fixed bug with URL parsing when tweet contains emoji in text.
-- ⚡ Performance improvements for large threads.
-
-### 2026-07-25
-- 🎉 **Initial release** – first working version.
-- Added support for tweets, replies, and embedded media.
-- Thread download mode.
-- Custom output directory via `--output`.
-- Error handling for deleted/protected tweets.
 
 ---
 
-## Project Stats
+## Contributing – TVA Temporal Engineer Edition
 
-| Metric | Value |
-|--------|-------|
-| Lines of code (Python) | ~1,200 |
-| Commits | 52 |
-| Contributors | 1 (you!) |
-| Tweets downloaded so far | 2,847 (and counting) |
-| Average download time | 2.3 seconds per tweet |
-| Successful resume rate | 94% |
+Welcome, variant! You have been selected to help maintain the Sacred Timeline of xotaDown. Before you submit a pull request, please align your actions with the following TVA directives:
 
----
+### 🔧 How to Contribute
 
-## Motivational Quote
+1. **Prune a Branch** – Fork the repository and create a feature branch from `main`. Name it something descriptive, e.g., `fix/unicode-gremlin` or `feat/gif-support`.
+2. **Reset the Timeline** – Ensure your code passes existing tests. Run `pytest` or `python -m unittest discover` before committing.
+3. **Submit an Evidence File** – Open a pull request with a clear description of what you changed and why. Include screenshots or logs if you fixed a timeline anomaly (a.k.a. a bug).
+4. **Await Judgment** – A Time-Keeper (maintainer) will review your PR. We may ask for changes to keep the timeline stable.
 
-> “The best time to start is now. The second best time is after you've downloaded your first tweet.”  
-> – *Anonymous xotaDown user*
+### 📜 Code of Conduct
 
----
+- All variants are welcome, regardless of timeline origin.
+- No nexus events (breaking changes without discussion).
+- Use clear, temporal-proof commit messages: `fix: resolve crash when tweet contains emoji` or `feat: add video transcoding`.
+- Respect the pruning order – keep your changes focused and atomic.
 
-## Featured Use Case
+### 🧪 Testing Your Changes
 
-**Digital Archivist:** Save important threads from thought leaders, journalists, or historical events before they disappear. Use `--thread` and `--date` filters to keep only relevant content.
+- Run `python xotaDown.py --test` (if available) or manually test with a known tweet URL.
+- For new features, add tests in the `tests/` folder. If you don’t, the TVA may send a Minuteman to your timeline.
 
-**Content Creator:** Quickly gather inspiration from trending tweets without leaving the command line. Use `--batch` to archive your own timeline for later analysis.
+### 🕰️ Submitting a PR
 
----
+We accept contributions that:
+- Fix bugs (temporal paradoxes)
+- Add new output formats (e.g., `--format json`)
+- Improve download speed (accelerate the timeline)
+- Expand platform support (other social media? maybe…)
 
-## Acknowledgements
+Remember: *For all time. Always.* And if you break the timeline, we’ll send a Reset Charge your way. Happy coding, agent!
 
-xotaDown stands on the shoulders of these amazing open-source projects:
-
-- **[Requests](https://requests.readthedocs.io/)** – Elegant HTTP handling.
-- **[Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)** – Robust HTML/XML parsing.
-- **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** – Powerful media extraction (used internally for video downloads).
-- **[Rich](https://rich.readthedocs.io/)** – Beautiful terminal output and progress bars.
-
-Special thanks to the X/Twitter community for providing endless test cases (and entertainment).
-
----
-
-## License
-
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+--- 
+*End of transmission. TVA File #xotaDown-2026-07-31.*
