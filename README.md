@@ -55,42 +55,69 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 
 ### 2026-07-30
 - 🆕 **Smart Resume** – Added `--resume` flag to skip already-downloaded media and avoid re-downloads.
-- 🐛 Fixed crash when tweet contains multi-byte unicode characters in user bio.
+- 🐛 Fixed crash when tweet contains multi-byte unicode characters in user b
 
 ---
 
-## Contributing – TVA Temporal Engineer Edition
+## Contributing to the Sacred Timeline
 
-Welcome, variant! You have been selected to help maintain the Sacred Timeline of xotaDown. Before you submit a pull request, please align your actions with the following TVA directives:
+Welcome, Temporal Agent! The Time Variance Authority (TVA) appreciates your interest in preserving the **Sacred Timeline of tweet archives**. Every contribution helps us prune temporal anomalies (read: broken downloaders) and ensure xotaDown remains a perfectly deterministic tool.
 
-### 🔧 How to Contribute
+### How to File a Variant Report (Bug Report)
 
-1. **Prune a Branch** – Fork the repository and create a feature branch from `main`. Name it something descriptive, e.g., `fix/unicode-gremlin` or `feat/gif-support`.
-2. **Reset the Timeline** – Ensure your code passes existing tests. Run `pytest` or `python -m unittest discover` before committing.
-3. **Submit an Evidence File** – Open a pull request with a clear description of what you changed and why. Include screenshots or logs if you fixed a timeline anomaly (a.k.a. a bug).
-4. **Await Judgment** – A Time-Keeper (maintainer) will review your PR. We may ask for changes to keep the timeline stable.
+Found a nexus event? Open an [Issue](https://github.com/shubhyagami/xotaDown/issues) with:
+- A clear description of the **deviation** (expected vs. actual behaviour).
+- Steps to **reset the timeline** (reproduction steps).
+- Your **TVA ID** (Python version, OS, and any error logs).
+- **Attachment of the offending tweet URL** (redacted if necessary – we don’t judge).
 
-### 📜 Code of Conduct
+### Submitting a Prune (Pull Request)
 
-- All variants are welcome, regardless of timeline origin.
-- No nexus events (breaking changes without discussion).
-- Use clear, temporal-proof commit messages: `fix: resolve crash when tweet contains emoji` or `feat: add video transcoding`.
-- Respect the pruning order – keep your changes focused and atomic.
+1. **Fork** the repository – consider this your own branched timeline.
+2. **Create a feature branch** from `main` (the “Prime” timeline).
+3. **Commit your changes** with a clear message. Use the format:  
+   `[TVA-###] Short description of the reset`
+4. **Push** and open a Pull Request.  
+   - In the description, explain **what nexus event** your PR addresses.
+   - If your change fixes an issue, link it using `Closes #123`.
+5. A **TVA Analyst** (maintainer) will review your case. Expect questions – they’re just verifying the timeline hasn’t been tampered with.
 
-### 🧪 Testing Your Changes
+### Code of Conduct
 
-- Run `python xotaDown.py --test` (if available) or manually test with a known tweet URL.
-- For new features, add tests in the `tests/` folder. If you don’t, the TVA may send a Minuteman to your timeline.
+All agents must adhere to the **TVA Code of Order**:
+- Be **courteous** – no one likes a rogue variant.
+- Respect **temporal ordering** – keep your code clean and PEP 8 compliant.
+- **No self‑pruning** – do not delete or modify your own PRs without a valid reason.
+- **No interference** with other agents’ work without prior coordination.
 
-### 🕰️ Submitting a PR
+### Development Setup
 
-We accept contributions that:
-- Fix bugs (temporal paradoxes)
-- Add new output formats (e.g., `--format json`)
-- Improve download speed (accelerate the timeline)
-- Expand platform support (other social media? maybe…)
+To set up your own TVA workstation:
 
-Remember: *For all time. Always.* And if you break the timeline, we’ll send a Reset Charge your way. Happy coding, agent!
+```bash
+git clone https://github.com/shubhyagami/xotaDown.git
+cd xotaDown
+python -m venv .tva_venv
+source .tva_venv/bin/activate   # or .tva_venv\Scripts\activate on Windows
+pip install -r requirements-dev.txt   # includes testing & linting tools
+```
 
---- 
-*End of transmission. TVA File #xotaDown-2026-07-31.*
+Run the tests to ensure the timeline remains intact:
+
+```bash
+pytest tests/
+```
+
+Lint your code with:
+
+```bash
+flake8 xotaDown.py
+```
+
+### Need Help?
+
+Contact the **TVA Help Desk** by opening a [Discussion](https://github.com/shubhyagami/xotaDown/discussions). We’ll get a Variant Locator on the case ASAP.
+
+---
+
+*Thank you for helping maintain the one true timeline of tweet downloads. Long live the Sacred Timeline!*
