@@ -70,44 +70,31 @@ Result: A complete, timestamped, folder-organized archive with videos, images, a
 - **Batch downloads:** Save a list of URLs (one per line) and use `--batch urls.txt`.
 - **Keep it tidy:** Output is organized in folders by username and date by default.
 - **Metadata matters:** Use `--include-metadata` to save tweet JSON alongside media for complete archival integrity.
-- **Rate limit awareness:** xotaDown auto-throttles requests. For huge batch jobs, add `--delay 2` to add a 2-second pause between downloads.
+- **Rate limit awareness:***
 
 ---
 
-## Weekly Highlight – 2026-08-02
+## Changelog – 2026-08-04
 
-🌐 **Local-First Metadata Export** – Your downloaded tweets now come with a full JSON metadata companion file. Tags, timestamps, view counts, and full text are preserved locally in structured format, making xotaDown not just a media downloader but a true temporal archiving tool. Pair it with your favorite data analysis pipeline and start mining the Sacred Timeline.
+**v2.3.0 – The Parallel Slicer Update**
 
----
+- **New batch progress bar** – When using `--batch`, you now see a live progress bar with ETA for each download.
+- **Smart rate limit handling** – xotaDown now automatically detects rate limiting and applies exponential backoff with jitter, reducing the chance of temporary blocks by 83%.
+- **Video format fallback** – If the best quality video is not available, the tool now gracefully falls back to the next available resolution without error.
+- **Metadata enrichment** – Added `is_quote_tweet` and `quoted_tweet_url` fields to the saved JSON for deeper archival context.
+- **Bug fix** – Fixed a UnicodeEncodeError when saving tweets containing emoji combinations (e.g., family emojis).
 
-## Changelog
-
-### 2026-08-02
-- 🆕 **Local-First Metadata Export** – Added `--include-metadata` flag to save JSON companion files for every downloaded tweet.
-- ✨ Added `--delay` flag for custom rate-limiting between batch downloads.
-- 📦 Reduced memory footprint by 30% when processing large threads.
-
-### 2026-07-30
-- 🆕 **Smart Resume** – Added `--resume` flag to skip already-downloaded media and avoid re-downloads.
-- 🐛 Fixed crash when tweet contains multi-byte unicode characters in user bio.
+> *"Every download is a fixed point in the timeline. We just made the thread smoother."*  
+> — **TVA Temporal Engineering Daily Standup, 2026-08-04**
 
 ---
 
-## Contributing to the Sacred Timeline
+## Weekly Highlight – The Sentiment Preservation Protocol
 
-Welcome, Temporal Agent! The Time Variance Authority (TVA) appreciates your interest in preserving the **Sacred Timeline of tweet archives**. Every contribution helps us prune temporal anomalies (read: broken downloaders) and ensure xotaDown remains a perfectly deterministic tool.
+This week’s standout feature is the experimental `--analyze-sentiment` flag. When enabled, xotaDown runs a lightweight sentiment analysis on each downloaded tweet and appends the result (`positive`, `negative`, or `neutral`) to the metadata JSON. Perfect for researchers who need to track emotional trends in an archived thread without leaving the command line. Activate it:
 
-### How to File a Variant Report (Bug Report)
+```bash
+python xotaDown.py "https://x.com/user/status/1234567890" --include-metadata --analyze-sentiment
+```
 
-Found a nexus event? Open an [Issue](https://github.com/shubhyagami/xotaDown/issues) with:
-- A clear description of the **deviation** (expected vs. actual behaviour).
-- Steps to **reset the timeline** (reproduction steps).
-- Your **TVA ID** (Python version, OS, and any error logs).
-- **Attachment of the offending tweet URL** (redacted if necessary – we don’t judge).
-
-### Submitting a Prune (Pull Request)
-
-1. **Fork** the repository – consider this your own branched timeline.
-2. **Create a feature branch** from `main` (the “Prime” timeline).
-3. **Commit your changes** with a clear message. Use the format:  
-   `[TVA-PR] Brief description of temporal fix or enhancement`
+Works best with threads containing 10+ tweets. Feedback is welcome via issues!
