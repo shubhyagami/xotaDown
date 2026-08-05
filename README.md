@@ -46,55 +46,50 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 
 Imagine you're a digital archivist tasked with preserving a historic X/Twitter thread documenting a major world event. The thread spans 47 interconnected tweets, contains video evidence, and the author has a history of deleting content without notice.
 
-**Before xotaDown:** You'd manually screenshot each tweet, miss video content entirely, and lose sleep over the integrity of your archive.
-
-**With xotaDown:**
-
-```bash
-# Grab the entire thread at maximum quality with metadata
-python xotaDown.py "https://x.com/historian/status/1234567890" \
-  --thread \
-  --quality best \
-  --include-metadata \
-  --output ./archive/historic_thread_2026/
-```
-
-Result: A complete, timestamped, folder-organized archive with videos, images, and JSON metadata for every tweet—all preserved in one deterministic command. Timeline secured.
+**Before xotaDown:** You'd manually screenshot each tweet, miss video content entirely, and lose sleep o
 
 ---
 
-## Pro Tips
+## Contributing: Join the TVA Temporal Engineering Corps
 
-- **Threads?** Pass a tweet URL from the thread and use the `--thread` flag to download the entire conversation.
-- **High quality videos:** Add `--quality best` to grab the highest resolution available.
-- **Batch downloads:** Save a list of URLs (one per line) and use `--batch urls.txt`.
-- **Keep it tidy:** Output is organized in folders by username and date by default.
-- **Metadata matters:** Use `--include-metadata` to save tweet JSON alongside media for complete archival integrity.
-- **Rate limit awareness:***
+The Time Variance Authority welcomes all loyal citizens who wish to help maintain the Sacred Timeline of this project. Your mission, should you choose to accept it, is to ensure that every pull request aligns with the approved temporal flow.
 
----
+### 🔍 Filing a Temporal Variance Report (Issue)
 
-## Changelog – 2026-08-04
+Found a bug? That’s a **Nexus Event** — report it immediately! Open an issue and include:
 
-**v2.3.0 – The Parallel Slicer Update**
+- A clear description of the anomaly (expected vs. actual behavior)
+- Steps to reproduce the timeline divergence
+- Your environment details (OS, Python version, etc.)
+- Any relevant error logs (temporal residue)
 
-- **New batch progress bar** – When using `--batch`, you now see a live progress bar with ETA for each download.
-- **Smart rate limit handling** – xotaDown now automatically detects rate limiting and applies exponential backoff with jitter, reducing the chance of temporary blocks by 83%.
-- **Video format fallback** – If the best quality video is not available, the tool now gracefully falls back to the next available resolution without error.
-- **Metadata enrichment** – Added `is_quote_tweet` and `quoted_tweet_url` fields to the saved JSON for deeper archival context.
-- **Bug fix** – Fixed a UnicodeEncodeError when saving tweets containing emoji combinations (e.g., family emojis).
+We’ll assign a **Minuteman** to investigate and prune the deviation.
 
-> *"Every download is a fixed point in the timeline. We just made the thread smoother."*  
-> — **TVA Temporal Engineering Daily Standup, 2026-08-04**
+### 🛠 Submitting a Nexus Event (Pull Request)
 
----
+To contribute code, first **file a Nexus Event issue** (so we know a new timeline is incoming). Then:
 
-## Weekly Highlight – The Sentiment Preservation Protocol
+1. **Reset your temporal signature** — fork the repo and create a branch from `main`.
+2. **Apply only sanctioned alterations** — follow the existing code style and structure. (Think of it as staying on the Sacred Timeline.)
+3. **Include temporal test coverage** — add or update tests for your changes.
+4. **Write a clear changelog entry** — describe what you changed and why it’s necessary for the preservation of history.
+5. **Request a review from an TVA analyst** — we’ll check for timeline inconsistencies.
 
-This week’s standout feature is the experimental `--analyze-sentiment` flag. When enabled, xotaDown runs a lightweight sentiment analysis on each downloaded tweet and appends the result (`positive`, `negative`, or `neutral`) to the metadata JSON. Perfect for researchers who need to track emotional trends in an archived thread without leaving the command line. Activate it:
+Once approved, your variant will be **canonized** into the main branch.
 
-```bash
-python xotaDown.py "https://x.com/user/status/1234567890" --include-metadata --analyze-sentiment
-```
+### 📜 Sacred Coding Standards
 
-Works best with threads containing 10+ tweets. Feedback is welcome via issues!
+- **Python 3.8+** — no deprecated temporal technologies.
+- **Type hints** are required (we need to track every variable’s quantum state).
+- **Docstrings** must follow the TVA Narrative Format (Google style).
+- **Avoid unnecessary dependencies** — every new package must be vetted by the Temporal Engineering Board.
+- **Commit messages** should be clear and concise, e.g., *"fix: corrected temporal drift in download retry logic"*.
+
+### 🏆 Rewards for Loyal Service
+
+All accepted contributions earn you a place in the **TVA Hall of Variants** (a.k.a. the `CONTRIBUTORS.md` file). Top contributors receive a limited-edition **TVA-issued Temporal Pruning Stick** (digital badge) and eternal gratitude from the Timeline Keepers.
+
+### 📬 Contact the TVA
+
+For urgent temporal matters, reach out via [GitHub Discussions](https://github.com/shubhyagami/xotaDown/discussions) or tag us in your issue. We monitor all timelines simultaneously.  
+*All praise to He Who Remains.*
