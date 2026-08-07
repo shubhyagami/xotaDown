@@ -1,7 +1,5 @@
 # xotaDown
 
----
-
 ```
   ██╗  ██╗ ██████╗ ████████╗ █████╗ ██████╗  ██████╗ ██╗    ██╗███╗   ██╗
   ╚██╗██╔╝██╔═══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔═══██╗██║    ██║████╗  ██║
@@ -14,19 +12,28 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Last Commit](https://img.shields.io/badge/last%20commit-2026--08--02-orange)
+![Last Commit](https://img.shields.io/badge/last%20commit-2026--08--08-orange)
 ![Downloads](https://img.shields.io/badge/downloads-2.8k%2B-yellow)
-![Temporal Anomalies Pruned](https://img.shields.io/badge/TVA%20anomalies%20pruned-42-red)
-![Cache Hit Rate](https://img.shields.io/badge/cache%20hit%20rate-98.4%25-success)
 
 > **Save tweets, videos, and threads from X/Twitter with a single command.**
 
-> *"In the vast temporal expanse of the internet, tweets vanish like variants diverging from the Sacred Timeline. xotaDown is your temporal anchor—preserving the moment before it is pruned from existence."*  
-> — **TVA Temporal Engineering Manual, Vol. 7**
+---
+
+## Features
+
+- **Single Command Download:** Grab individual tweets, videos, or entire threads effortlessly.
+- **Media Extraction:** Automatically downloads attached images and video content.
+- **Thread Preservation:** Fetches and organizes interconnected tweets chronologically.
+- **Local Caching:** Reduces redundant network requests with a high-efficiency local cache.
+- **Rate-Limit Handling:** Safely manages X/Twitter API limits and retries failed downloads.
 
 ---
 
-## Quick Start
+## Getting Started
+
+To get a local copy up and running, you just need Python 3.8 or newer and `pip`.
+
+### Quick Start
 
 ```bash
 # Clone the repo
@@ -42,54 +49,54 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 
 ---
 
-## Featured Use Case: The Archivist Initiative
+## Use Case: Digital Archiving
 
-Imagine you're a digital archivist tasked with preserving a historic X/Twitter thread documenting a major world event. The thread spans 47 interconnected tweets, contains video evidence, and the author has a history of deleting content without notice.
+If you are a digital archivist or journalist tasked with preserving historic threads, xotaDown simplifies the extraction process. 
 
-**Before xotaDown:** You'd manually screenshot each tweet, miss video content entirely, and lose sleep o
+Rather than manually screenshotting interconnected tweets (which often breaks the context and misses video content), you can pass the root URL of a thread to the tool. xotaDown systematically fetches the entire thread, downloads all associated media, and saves the text locally. This ensures you have a reliable, offline record of the content before it is edited or deleted.
 
 ---
 
-## Contributing: Join the TVA Temporal Engineering Corps
+## Contributing
 
-The Time Variance Authority welcomes all loyal citizens who wish to help maintain the Sacred Timeline of this project. Your mission, should you choose to accept it, is to ensure that every pull request aligns with the approved temporal flow.
+Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-### 🔍 Filing a Temporal Variance Report (Issue)
+### Reporting Bugs
 
-Found a bug? That’s a **Nexus Event** — report it immediately! Open an issue and include:
+Found a bug? Open an issue and include:
 
-- A clear description of the anomaly (expected vs. actual behavior)
-- Steps to reproduce the timeline divergence
-- Your environment details (OS, Python version, etc.)
-- Any relevant error logs (temporal residue)
+- A clear description of the problem (expected vs. actual behavior).
+- Steps to reproduce the issue.
+- Your environment details (OS, Python version, etc.).
+- Relevant error logs or stack traces.
 
-We’ll assign a **Minuteman** to investigate and prune the deviation.
+### Submitting a Pull Request
 
-### 🛠 Submitting a Nexus Event (Pull Request)
+1. Fork the repository and create a branch from `main`.
+2. Follow the existing code style and structure.
+3. Add or update tests to cover your changes.
+4. Write a clear changelog entry describing what you changed and why.
+5. Open a pull request and request a review.
 
-To contribute code, first **file a Nexus Event issue** (so we know a new timeline is incoming). Then:
+### Coding Standards
 
-1. **Reset your temporal signature** — fork the repo and create a branch from `main`.
-2. **Apply only sanctioned alterations** — follow the existing code style and structure. (Think of it as staying on the Sacred Timeline.)
-3. **Include temporal test coverage** — add or update tests for your changes.
-4. **Write a clear changelog entry** — describe what you changed and why it’s necessary for the preservation of history.
-5. **Request a review from an TVA analyst** — we’ll check for timeline inconsistencies.
+- **Python 3.8+**: Ensure your code is compatible with Python 3.8 and above.
+- **Type Hints**: Required for all new functions and methods.
+- **Docstrings**: Must follow the Google style format.
+- **Dependencies**: Avoid adding unnecessary packages. Any new dependency must be clearly justified.
+- **Commit Messages**: Use clear, concise messages, e.g., *"fix: corrected retry logic for download timeouts"*.
 
-Once approved, your variant will be **canonized** into the main branch.
+All accepted contributions earn you a place in the `CONTRIBUTORS.md` file.
 
-### 📜 Sacred Coding Standards
+## Contact
 
-- **Python 3.8+** — no deprecated temporal technologies.
-- **Type hints** are required (we need to track every variable’s quantum state).
-- **Docstrings** must follow the TVA Narrative Format (Google style).
-- **Avoid unnecessary dependencies** — every new package must be vetted by the Temporal Engineering Board.
-- **Commit messages** should be clear and concise, e.g., *"fix: corrected temporal drift in download retry logic"*.
+For questions, suggestions, or support, please reach out via [GitHub Discussions](https://github.com/shubhyagami/xotaDown/discussions) or open an issue.
 
-### 🏆 Rewards for Loyal Service
+---
 
-All accepted contributions earn you a place in the **TVA Hall of Variants** (a.k.a. the `CONTRIBUTORS.md` file). Top contributors receive a limited-edition **TVA-issued Temporal Pruning Stick** (digital badge) and eternal gratitude from the Timeline Keepers.
+## Changelog
 
-### 📬 Contact the TVA
-
-For urgent temporal matters, reach out via [GitHub Discussions](https://github.com/shubhyagami/xotaDown/discussions) or tag us in your issue. We monitor all timelines simultaneously.  
-*All praise to He Who Remains.*
+### [0.2.0] - 2026-08-08
+- Cleaned up README layout and documentation.
+- Improved thread-fetching reliability for long threads.
+- Added better local cache management to reduce redundant network requests.
