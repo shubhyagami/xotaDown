@@ -13,7 +13,6 @@
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![Last Commit](https://img.shields.io/badge/last%20commit-2026--08--08-orange)
-![Downloads](https://img.shields.io/badge/downloads-2.8k%2B-yellow)
 
 > **Save tweets, videos, and threads from X/Twitter with a single command.**
 
@@ -22,28 +21,28 @@
 ## Features
 
 - **Single Command Download:** Grab individual tweets, videos, or entire threads effortlessly.
-- **Media Extraction:** Automatically downloads attached images and video content.
+- **Media Extraction:** Automatically downloads attached images and video content alongside the text.
 - **Thread Preservation:** Fetches and organizes interconnected tweets chronologically.
-- **Local Caching:** Reduces redundant network requests with a high-efficiency local cache.
-- **Rate-Limit Handling:** Safely manages X/Twitter API limits and retries failed downloads.
+- **Local Caching:** Reduces redundant network requests with an efficient local cache.
+- **Rate-Limit Handling:** Safely manages X/Twitter API limits and automatically retries failed downloads.
 
 ---
 
 ## Getting Started
 
-To get a local copy up and running, you just need Python 3.8 or newer and `pip`.
+To get started, you only need Python 3.8 or newer and `pip`.
 
 ### Quick Start
 
 ```bash
-# Clone the repo
+# Clone the repository
 git clone https://github.com/shubhyagami/xotaDown.git
 cd xotaDown
 
 # Install dependencies
 pip install -r requirements.txt
 
-# Download a tweet by URL
+# Download a tweet or thread by URL
 python xotaDown.py "https://x.com/user/status/1234567890"
 ```
 
@@ -53,7 +52,7 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 
 If you are a digital archivist or journalist tasked with preserving historic threads, xotaDown simplifies the extraction process. 
 
-Rather than manually screenshotting interconnected tweets (which often breaks the context and misses video content), you can pass the root URL of a thread to the tool. xotaDown systematically fetches the entire thread, downloads all associated media, and saves the text locally. This ensures you have a reliable, offline record of the content before it is edited or deleted.
+Rather than manually screenshotting interconnected tweets—which often breaks context and misses video content—you can pass the root URL of a thread to the tool. xotaDown systematically fetches the entire thread, downloads all associated media, and saves the text locally. This ensures you have a reliable, offline record of the content before it is edited or deleted.
 
 ---
 
@@ -87,6 +86,8 @@ Found a bug? Open an issue and include:
 - **Commit Messages**: Use clear, concise messages, e.g., *"fix: corrected retry logic for download timeouts"*.
 
 All accepted contributions earn you a place in the `CONTRIBUTORS.md` file.
+
+---
 
 ## Contact
 
