@@ -12,6 +12,7 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
+![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
 > **Save tweets, videos, and threads from X/Twitter with a single command.**
 
@@ -29,7 +30,7 @@
 
 ## Getting Started
 
-To get started, you only need Python 3.8 or newer and `pip`.
+You only need Python 3.8 or newer and `pip` to get up and running.
 
 ### Quick Start
 
