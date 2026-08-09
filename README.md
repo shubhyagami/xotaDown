@@ -12,7 +12,6 @@
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
-![Last Commit](https://img.shields.io/badge/last%20commit-2026--08--08-orange)
 
 > **Save tweets, videos, and threads from X/Twitter with a single command.**
 
@@ -97,7 +96,7 @@ For questions, suggestions, or support, please reach out via [GitHub Discussions
 
 ## Changelog
 
-### [0.2.0] - 2026-08-08
+### [0.2.0] - 2026-08-09
 - Cleaned up README layout and documentation.
 - Improved thread-fetching reliability for long threads.
 - Added better local cache management to reduce redundant network requests.
