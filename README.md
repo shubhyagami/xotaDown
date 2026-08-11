@@ -46,6 +46,8 @@ pip install -r requirements.txt
 python xotaDown.py "https://x.com/user/status/1234567890"
 ```
 
+> **Note:** Depending on your system configuration, you may need to use `python3` and `pip3` instead of `python` and `pip`.
+
 ---
 
 ## Use Case: Digital Archiving
@@ -101,3 +103,8 @@ For questions, suggestions, or support, please reach out via [GitHub Discussions
 - Cleaned up README layout and documentation.
 - Improved thread-fetching reliability for long threads.
 - Added better local cache management to reduce redundant network requests.
+
+### [0.1.0] - 2026-07-15
+- Initial release.
+- Implemented core downloading for single tweets and threads.
+- Added basic media extraction for images and videos.
