@@ -99,7 +99,7 @@ For questions, suggestions, or support, please reach out via [GitHub Discussions
 
 ## Changelog
 
-### [0.2.0] - 2026-08-09
+### [0.2.0] - 2026-08-12
 - Cleaned up README layout and documentation.
 - Improved thread-fetching reliability for long threads.
 - Added better local cache management to reduce redundant network requests.
