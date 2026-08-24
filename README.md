@@ -1,22 +1,19 @@
 # xotaDown
 
-```
-  ██╗  ██╗ ██████╗ ████████╗ █████╗ ██████╗  ██████╗ ██╗    ██╗███╗   ██╗
-  ╚██╗██╔╝██╔═══██╗╚══██╔══╝██╔══██╗██╔══██╗██╔═══██╗██║    ██║████╗  ██║
-   ╚███╔╝ ██║   ██║   ██║   ███████║██║  ██║██║   ██║██║ █╗ ██║██╔██╗ ██║
-   ██╔██╗ ██║   ██║   ██║   ██╔══██║██║  ██║██║   ██║██║███╗██║██║╚██╗██║
-  ██╔╝ ██╗╚██████╔╝   ██║   ██║  ██║██████╔╝╚██████╔╝╚███╔███╔╝██║ ╚████║
-  ╚═╝  ╚═╝ ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═════╝  ╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═══╝
-```
+[xotaDown Logo]
 
 ![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Status](https://img.shields.io/badge/status-active-brightgreen)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
-> Save tweets, videos, and threads from X (Twitter) with a single command.
+A command-line tool for saving tweets, videos, and threads from X (Twitter) with a single command.
 
 ## Features
+
+### Quick Start
+
+Effortlessly save individual tweets, videos, or entire threads with a single command.
 
 - **Single Command Download:** Grab individual tweets, videos, or entire threads effortlessly.
 - **Media Extraction:** Automatically downloads attached images and video content alongside the text.
@@ -26,9 +23,9 @@
 
 ## Getting Started
 
-You will need Python 3.8 or newer and `pip` to get up and running.
+To get started, clone the repository, install dependencies, and run the tool.
 
-### Quick Start
+### Quick Installation
 
 ```bash
 # Clone the repository
@@ -46,13 +43,13 @@ python xotaDown.py "https://x.com/user/status/1234567890"
 
 ## Use Case: Digital Archiving
 
-If you are a digital archivist or journalist tasked with preserving historic threads, xotaDown simplifies the extraction process. 
+xotaDown simplifies the extraction process for digital archivists and journalists.
 
 Rather than manually screenshotting interconnected tweets—which often breaks context and misses video content—you can pass the root URL of a thread to the tool. xotaDown systematically fetches the entire thread, downloads all associated media, and saves the text locally. This ensures you have a reliable, offline record of the content before it is edited or deleted.
 
 ## Contributing
 
-Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open-source community such a fantastic place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 ### Reporting Bugs
 
@@ -78,8 +75,6 @@ Found a bug? Open an issue and include:
 - **Docstrings**: Must follow the Google style format.
 - **Dependencies**: Avoid adding unnecessary packages. Any new dependency must be clearly justified.
 - **Commit Messages**: Use clear, concise messages (e.g., "fix: corrected retry logic for download timeouts").
-
-All accepted contributions earn you a place in the `CONTRIBUTORS.md` file.
 
 ## Contact
 
