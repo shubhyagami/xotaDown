@@ -1,31 +1,37 @@
-# xotaDown
+# xotaDown  
 
-![Python Version](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
-![License](https://img.shields.io/badge/license-MIT-green)
-![Status](https://img.shields.io/badge/status-active-brightgreen)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)](https://python.org)  
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
+[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/shubhyagami/xotaDown)  
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/shubhyagami/xotaDown/pulls)  
 
-A command‑line tool for saving tweets, videos, and threads from X (Twitter) with a single command.
-
----
-
-## Overview
-
-xotaDown simplifies the process of downloading tweets, media, and full threads from X (formerly Twitter). With one command you can fetch a tweet’s text, images, and videos, and the tool automatically preserves entire thread contexts. It’s ideal for archiving, research, journalism, or personal reference.
+A lightweight command‑line tool for saving tweets, media, and full threads from X (formerly Twitter) with a single command.
 
 ---
 
-## Key Features
+## Overview  
 
-- **Single‑Command Downloads** – Pull individual tweets, videos, or complete threads instantly.  
-- **Media Extraction** – Saves attached images and videos alongside the tweet text.  
-- **Thread Preservation** – Retrieves and orders all replies in chronological sequence.  
-- **Local Caching** – Caches downloads to avoid redundant network requests.  
-- **Rate‑Limit Management** – Handles X/Twitter API limits gracefully and retries failed fetches.
+xotaDown streamlines archiving of X content.  
+- Pull individual tweets, videos, or complete threads instantly.  
+- Retrieve attached images, videos, and tweets text in one go.  
+- Maintain chronological order of thread replies.  
+- Cache downloads locally to avoid redundant network requests and gracefully handle rate‑limit throttling.  
+
+Ideal for personal reference, research, journalism, or any workflow that needs reliable social‑media snapshots.
 
 ---
 
-## Getting Started
+## Key Features  
+
+- **One‑command downloads** – Fetch a tweet, a video, or an entire thread with a single CLI call.  
+- **Media extraction** – Saves images and videos alongside the tweet text.  
+- **Thread preservation** – Retrieves and orders all replies correctly.  
+- **Local caching** – Stores previously fetched content to speed up subsequent runs.  
+- **Rate‑limit handling** – Manages API limits and retries failed requests automatically.  
+
+---
+
+## Getting Started  
 
 1. **Clone the repository**  
    ```bash
@@ -43,53 +49,52 @@ xotaDown simplifies the process of downloading tweets, media, and full threads f
    python xotaDown.py "https://x.com/user/status/1234567890"
    ```
 
-*Tip:* Add `xotaDown` to your `PATH` or create an alias for quick access.
+   *Optional:* Add `xotaDown` to your `PATH` or create an alias for quick access.
 
 ---
 
-## Use Cases
+## Use Cases  
 
-- **Digital archivists** – Preserve social media content for historical or research purposes.  
-- **Journalists** – Collect and verify information from Twitter threads for reporting.  
-- **Social media enthusiasts** – Save tweets, videos, and threads for personal reference or sharing.
-
----
-
-## Contributing
-
-Contributions keep the project vibrant. Follow these steps to get involved:
-
-### Reporting Bugs
-- Provide a concise description of the issue (expected vs. actual behavior).  
-- List steps to reproduce and any relevant error logs or stack traces.  
-- Include environment details (OS, Python version, etc.).
-
-### Pull Requests
-1. Fork the repo and branch from `main`.  
-2. Adhere to the existing code style and structure.  
-3. Add or update tests covering your changes.  
-4. Write a clear changelog entry describing the modification and its reason.  
-5. Submit a pull request and request a review.
+- **Digital archivists** – Capture and preserve social‑media artifacts for research or historical records.  
+- **Journalists** – Verify and collect Twitter threads for reporting.  
+- **Enthusiasts** – Save tweets, videos, or threads for later reading or sharing.
 
 ---
 
-## Contact
+## Contributing  
 
-For questions, suggestions, or support, join the discussion:
+Contributions are welcome.  
 
-- **GitHub Discussions**: https://github.com/shubhyagami/xotaDown/discussions  
-- **Open issues**: https://github.com/shubhyagami/xotaDown/issues
+### Reporting Issues  
+- Describe the expected behavior and what actually happens.  
+- Include steps to reproduce, error messages, and environment details (OS, Python version, etc.).  
+
+### Pull Requests  
+1. Fork the repo and create a branch from `main`.  
+2. Follow the existing code style and structure.  
+3. Add or update tests for new functionality.  
+4. Update the changelog with a brief entry describing the change and its purpose.  
+5. Open a pull request and request a review.
 
 ---
 
-## Changelog
+## Contact  
+
+- **Discussions:** https://github.com/shubhyagami/xotaDown/discussions  
+- **Issues:** https://github.com/shubhyagami/xotaDown/issues  
+
+Feel free to open a discussion for questions, feature suggestions, or general support.
+
+---
+
+## Changelog  
 
 ### 0.2.0 – 2026‑08‑12  
 - Refined README layout and overall documentation.  
-- Strengthened thread‑fetching reliability for long threads.  
-- Optimized local cache handling to minimise redundant downloads.
+- Improved thread‑fetching reliability for long threads.  
+- Optimized cache handling to reduce redundant downloads.  
 
 ### 0.1.0 – 2026‑07‑15  
 - Initial release.  
-- Core functionality for single‑tweet and thread downloads.  
+- Core single‑tweet and thread download functionality.  
 - Basic media extraction for images and videos.
