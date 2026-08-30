@@ -7,29 +7,23 @@
 
 A lightweight command‑line tool for saving tweets, media, and full threads from X (formerly Twitter) with a single command.
 
----
+---  
 
 ## Overview  
 
-xotaDown streamlines archiving of X content.  
-- Pull individual tweets, videos, or complete threads instantly.  
-- Retrieve attached images, videos, and tweets text in one go.  
-- Maintain chronological order of thread replies.  
-- Cache downloads locally to avoid redundant network requests and gracefully handle rate‑limit throttling.  
+xotaDown simplifies archiving X content. It lets you fetch a single tweet, retrieve an entire thread, or download attached images and videos—all in one go. The tool preserves the original order of replies, caches downloads locally, and handles rate‑limit throttling gracefully.
 
-Ideal for personal reference, research, journalism, or any workflow that needs reliable social‑media snapshots.
-
----
+---  
 
 ## Key Features  
 
-- **One‑command downloads** – Fetch a tweet, a video, or an entire thread with a single CLI call.  
+- **One‑command downloads** – Grab a tweet, a video, or an entire thread with a single CLI call.  
 - **Media extraction** – Saves images and videos alongside the tweet text.  
 - **Thread preservation** – Retrieves and orders all replies correctly.  
-- **Local caching** – Stores previously fetched content to speed up subsequent runs.  
-- **Rate‑limit handling** – Manages API limits and retries failed requests automatically.  
+- **Local caching** – Stores previously fetched content to avoid redundant network requests.  
+- **Rate‑limit handling** – Manages API limits and automatically retries failed requests.  
 
----
+---  
 
 ## Getting Started  
 
@@ -44,26 +38,43 @@ Ideal for personal reference, research, journalism, or any workflow that needs r
    pip install -r requirements.txt
    ```
 
-3. **Run the tool**  
+3. **Add to your PATH (optional)**  
    ```bash
-   python xotaDown.py "https://x.com/user/status/1234567890"
+   echo "$(pwd)/xotaDown" >> ~/.bashrc   # Bash
+   source ~/.bashrc
    ```
 
-   *Optional:* Add `xotaDown` to your `PATH` or create an alias for quick access.
+4. **Run the tool**  
+   ```bash
+   xotaDown.py "https://x.com/user/status/1234567890"
+   ```
 
----
+   For help, use `xotaDown.py -h`.
 
-## Use Cases  
+---  
 
-- **Digital archivists** – Capture and preserve social‑media artifacts for research or historical records.  
-- **Journalists** – Verify and collect Twitter threads for reporting.  
-- **Enthusiasts** – Save tweets, videos, or threads for later reading or sharing.
+## Usage Examples  
 
----
+- **Download a single tweet**  
+  ```bash
+  xotaDown.py "https://x.com/elonmusk/status/1523456789"
+  ```
+
+- **Download an entire thread**  
+  ```bash
+  xotaDown.py "https://x.com/elonmusk/status/1523456789" --thread
+  ```
+
+- **Specify an output directory**  
+  ```bash
+  xotaDown.py "https://x.com/user/status/1234567890" -o ./archives
+  ```
+
+---  
 
 ## Contributing  
 
-Contributions are welcome.  
+Contributions are welcome.
 
 ### Reporting Issues  
 - Describe the expected behavior and what actually happens.  
@@ -76,7 +87,7 @@ Contributions are welcome.
 4. Update the changelog with a brief entry describing the change and its purpose.  
 5. Open a pull request and request a review.
 
----
+---  
 
 ## Contact  
 
@@ -85,7 +96,7 @@ Contributions are welcome.
 
 Feel free to open a discussion for questions, feature suggestions, or general support.
 
----
+---  
 
 ## Changelog  
 
