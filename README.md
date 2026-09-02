@@ -1,123 +1,125 @@
 # xotaDown  
 
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)](https://python.org)  
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)](https://www.python.org/)  
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)  
-[![Status](https://img.shields.io/badge/status-active-brightgreen)](https://github.com/shubhyagami/xotaDown)  
+[![CI](https://github.com/shubhyagami/xotaDown/actions/workflows/ci.yml/badge.svg)](https://github.com/shubhyagami/xotaDown/actions)  
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)](https://github.com/shubhyagami/xotaDown/pulls)  
 
-A lightweight command‑line tool for saving tweets, media, and full threads from X (formerly Twitter) with a single command.
+> Lightweight CLI tool for downloading tweets, media, and entire threads from X (formerly Twitter).
 
----  
+---
 
 ## Overview  
 
-`xotaDown` simplifies archiving X content. With one CLI call you can:
+`xotaDown` lets you archive X content with a single command.  
+It supports:
 
-* download a single tweet,
-* fetch an entire thread, or
-* pull attached images and videos.
+* fetching a single tweet  
+* downloading an entire thread in the correct order  
+* extracting attached images and videos  
+* caching results locally to avoid repeated network traffic  
+* handling rate limits automatically
 
-The tool preserves the original order of replies, caches downloads locally, and handles rate‑limit throttling gracefully.
+---
 
----  
+## Features  
 
-## Key Features  
+| Feature | Description |
+|---------|-------------|
+| **One‑command downloads** | Retrieve any tweet or thread with a single invocation |
+| **Media extraction** | Saves images and videos next to the tweet text |
+| **Thread ordering** | Reconstructs threads in the correct reply order |
+| **Local cache** | Stores fetched tweets to avoid duplicate requests |
+| **Rate‑limit handling** | Retries and backs off when approaching API limits |
 
-- **One‑command downloads** – Retrieve a tweet, video, or entire thread with a single invocation.  
-- **Media extraction** – Saves images and videos alongside the tweet text.  
-- **Thread preservation** – Retrieves and orders all replies correctly.  
-- **Local caching** – Stores previously fetched content to avoid redundant network requests.  
-- **Rate‑limit handling** – Manages API limits and retries failed requests automatically.  
+---
 
----  
+## Installation  
 
-## Getting Started  
+```bash
+git clone https://github.com/shubhyagami/xotaDown.git
+cd xotaDown
+pip install -r requirements.txt
+```
 
-1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/shubhyagami/xotaDown.git
-   cd xotaDown
-   ```
+If you prefer the executable to be available globally:
 
-2. **Install dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
+```bash
+echo "$(pwd)/xotaDown.py" >> ~/.bashrc   # Bash
+source ~/.bashrc
+```
 
-3. **(Optional) Add to your PATH**  
-   ```bash
-   echo "$(pwd)/xotaDown" >> ~/.bashrc   # Bash
-   source ~/.bashrc
-   ```
+---
 
-4. **Run the tool**  
-   ```bash
-   xotaDown.py "https://x.com/user/status/1234567890"
-   ```
+## Usage  
 
-   For help, use `xotaDown.py -h`.
+```bash
+xotaDown.py "<tweet_url>" [options]
+```
 
----  
+### Options  
 
-## Usage Examples  
+| Flag | Meaning |
+|------|---------|
+| `--thread`, `-t` | Download the entire thread starting from the given tweet |
+| `-o <dir>`, `--output <dir>` | Change the output directory (defaults to the current directory) |
+| `-v`, `--verbose` | Show detailed progress information |
+| `-h`, `--help` | Display help message |
 
-- **Download a single tweet**  
-  ```bash
-  xotaDown.py "https://x.com/elonmusk/status/1523456789"
-  ```
+### Examples  
 
-- **Download an entire thread**  
-  ```bash
-  xotaDown.py "https://x.com/elonmusk/status/1523456789" --thread
-  ```
+```bash
+# Download a single tweet
+xotaDown.py "https://x.com/elonmusk/status/1523456789"
 
-- **Specify an output directory**  
-  ```bash
-  xotaDown.py "https://x.com/user/status/1234567890" -o ./archives
-  ```
+# Download an entire thread
+xotaDown.py "https://x.com/elonmusk/status/1523456789" --thread
 
----  
+# Save to a custom folder
+xotaDown.py "https://x.com/user/status/1234567890" -o ./archives
+```
+
+---
 
 ## Contributing  
 
-Contributions are welcome.
+Feel free to open issues or pull requests.
 
 ### Reporting Issues  
-- Describe expected behavior and what actually happens.  
-- Include steps to reproduce, error messages, and environment details (OS, Python version, etc.).  
+
+1. Describe what you expected vs. what happened.  
+2. Include steps to reproduce, error messages, and your environment (OS, Python version).  
 
 ### Pull Requests  
-1. Fork the repository and create a branch from `main`.  
-2. Follow the existing code style and structure.  
-3. Add or update tests for new functionality.  
-4. Update the changelog with a brief entry describing the change.  
-5. Open a pull request and request a review.
 
----  
+1. Fork the repo and create a branch off `main`.  
+2. Follow the existing style and add tests if you’re adding functionality.  
+3. Update the changelog with a brief description.  
+4. Submit the pull request and request a review.
 
-## Contact  
+---
 
-- **Discussions:** https://github.com/shubhyagami/xotaDown/discussions  
-- **Issues:** https://github.com/shubhyagami/xotaDown/issues  
+## Support  
 
-Feel free to open a discussion for questions, feature suggestions, or general support.
+- **Discussions** – https://github.com/shubhyagami/xotaDown/discussions  
+- **Issues** – https://github.com/shubhyagami/xotaDown/issues  
 
----  
+Feel free to ask questions or suggest new features.
+
+---
 
 ## Changelog  
 
 ### 0.2.0 – 2026‑08‑12  
-- Refined README layout and overall documentation.  
-- Improved thread‑fetching reliability for long threads.  
-- Optimized cache handling to reduce redundant downloads.  
+- Refined README layout.  
+- Improved thread fetching for long threads.  
+- Optimized cache to reduce redundant downloads.
 
 ### 0.1.0 – 2026‑07‑15  
-- Initial release.  
-- Core single‑tweet and thread download functionality.  
-- Basic media extraction for images and videos.
+- Initial release with single‑tweet and thread download, plus basic media extraction.
 
----  
+---
 
 ## License  
 
-This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
+MIT – see the [LICENSE](LICENSE) file.
