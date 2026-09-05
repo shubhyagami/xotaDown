@@ -1,50 +1,47 @@
 # xotaDown
 
-![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)  
-![License: MIT](https://img.shields.io/badge/license-MIT-green)  
-![CI](https://github.com/shubhyagami/xotaDown/actions/workflows/ci.yml/badge.svg)  
-![PyPI - Downloads](https://img.shields.io/pypi/dm/xotadown?label=pypi%20downloads)  
+![Python](https://img.shields.io/badge/python-3.8%2B-blue?logo=python)
+![License: MIT](https://img.shields.io/badge/license-MIT-green)
+![CI](https://github.com/shubhyagami/xotaDown/actions/workflows/ci.yml/badge.svg)
+![PyPI - Downloads](https://img.shields.io/pypi/dm/xotadown?label=pypi%20downloads)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 
-**xotaDown** is a lightweight command‑line utility for downloading tweets, media, and entire threads from X (formerly Twitter).  
-It requires no credentials for basic use; API keys are only needed for advanced features such as downloading protected accounts.
+**xotaDown** is a lightweight command‑line tool for downloading tweets, media, and entire threads from X (formerly Twitter).  
+No credentials are required for public content; API keys are only needed for protected accounts or to avoid stricter rate limits.
 
 ---
 
-## Quick Start
+## Getting Started
 
-1. **Install**  
-   ```bash
-   pip install xotadown
-   ```
+```bash
+# Install from PyPI
+pip install xotadown
+```
 
-2. **Run** a single tweet or a thread  
-   ```bash
-   xotaDown "https://x.com/elonmusk/status/1523456789"   # single tweet
-   xotaDown "https://x.com/elonmusk/status/1523456789" --thread  # whole thread
-   ```
+```bash
+# Download a single tweet
+xotaDown "https://x.com/elonmusk/status/1523456789"
 
-   For more options see `xotaDown --help`.
+# Download an entire thread
+xotaDown "https://x.com/elonmusk/status/1523456789" --thread
+```
+
+For a full list of options, run `xotaDown --help`.
 
 ---
 
 ## Features
 
-- Grab any tweet, thread, or media with a *single* command.
-- Preserve the reply order when reconstructing threads.
-- Automatically save images and videos alongside the tweet text.
-- Local caching avoids unnecessary network traffic.
-- Handles rate limits with exponential‑backoff retries.
-- Verbose mode shows detailed progress information.
+- Fetch a single tweet, its media, or an entire thread with a single command.
+- Preserve the original order of replies when reconstructing threads.
+- Save images, videos, and PDFs automatically alongside the tweet text.
+- Local cache prevents duplicate downloads.
+- Handles X rate limits with exponential back‑off.
+- Verbose mode (`-v`) shows progress and debugging information.
 
 ---
 
 ## Installation
-
-### Requirements
-
-- Python 3.8 or newer
-- `pip`
 
 ### From PyPI (recommended)
 
@@ -60,7 +57,7 @@ cd xotaDown
 pip install -e .
 ```
 
-After a source install you can run the tool globally without editing your shell profile – the `xotaDown` script is installed into `~/.local/bin` (or the equivalent on your system).
+The `xotaDown` script is installed in your user‐local `bin` directory (e.g., `~/.local/bin`), so you can run it from any directory.
 
 ---
 
@@ -70,19 +67,17 @@ After a source install you can run the tool globally without editing your shell 
 xotaDown "<tweet_url>" [options]
 ```
 
-### Options
+| Option | Aliases | Description |
+|--------|---------|-------------|
+| `-t`, `--thread` | – | Download the entire thread that contains the tweet |
+| `-o`, `--output` | – | Destination directory (defaults to the current working directory) |
+| `-v`, `--verbose` | – | Show detailed progress and status messages |
+| `-h`, `--help` | – | Show help information |
 
-| Flag | Meaning |
-|------|---------|
-| `-t`, `--thread` | Download the entire thread that contains the given tweet |
-| `-o`, `--output` | Destination directory (defaults to the current working directory) |
-| `-v`, `--verbose` | Show detailed progress and status messages |
-| `-h`, `--help` | Display this help information |
-
-### Examples
+**Examples**
 
 ```bash
-# 1‑tweet download
+# Single‑tweet download
 xotaDown "https://x.com/elonmusk/status/1523456789"
 
 # Thread download
@@ -96,23 +91,19 @@ xotaDown "https://x.com/user/status/1234567890" -o ./archives
 
 ## Contributing
 
-1. Fork the repo and create a branch off `main`.  
-2. Follow the existing style (PEP 8, type hints).  
+1. Fork the repository and create a branch off `main`.  
+2. Follow the existing style guidelines (PEP 8, type hints, tests).  
 3. Write tests for new features.  
-4. Update `CHANGELOG.md` with a short entry.  
-5. Open a pull request and request review.
+4. Update `CHANGELOG.md` with a brief description.  
+5. Open a pull request and request a review.
 
-### Reporting Issues
-
-- Use a descriptive title.
-- Include steps to reproduce, error output, and environment details (OS, Python version).
-- Attach logs or screenshots if helpful.
+If you find a bug or want to suggest an improvement, open an issue. Include a clear title, steps to reproduce, and any relevant logs.
 
 ---
 
 ## Support
 
-- **Discussions** – <https://github.com/shubhyagami/xotaDown/discussions>  
+- **Discussions** – <https://github.com/shubhyagami/xotaDown/discussions>
 - **Issues** – <https://github.com/shubhyagami/xotaDown/issues>
 
 ---
@@ -127,7 +118,7 @@ xotaDown "https://x.com/user/status/1234567890" -o ./archives
 ### 0.1.0 – 2026‑07‑15
 - Initial release with single‑tweet and thread download, plus basic media extraction.
 
-> For a full history, see the `CHANGELOG.md` file.
+> For a complete history, see the [CHANGELOG.md](CHANGELOG.md) file.
 
 ---
 
